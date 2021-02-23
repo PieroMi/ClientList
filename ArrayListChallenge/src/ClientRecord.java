@@ -60,7 +60,7 @@ public class ClientRecord {
 		return -1;
 	}
 	
-	public String searchContact(Contact contact) { 
+	public String searchClient(Contact contact) { 
 		if(findClient(contact) >= 0) {
 			return contact.getName();
 		}
@@ -69,7 +69,7 @@ public class ClientRecord {
 	
 	public Contact searchClient(String name) {
 		int position = findClient(name);
-		if(position >= 0) {
+		if(position >= 0) { // If name found is less than 0 it will return the name
 			return this.myContacts.get(position);
 		}
 		
@@ -78,10 +78,10 @@ public class ClientRecord {
 	
 	public void printList() {
 		System.out.println("Client List");
-		for(int i=0; i<this.myContacts.size(); i++) {
+		for(int i=0; i<this.myContacts.size(); i++) { // While i remains less than the contact size it will continue to add to the list.
 			System.out.println((i+1) + "." + 
 										"Name:" + this.myContacts.get(i).getName() + " ID:" +
-										this.myContacts.get(i).getIdNumber());
+										this.myContacts.get(i).getIdNumber() + " Favorite Pizza: " + this.myContacts.get(i).getFavPizza());
 		}
 	}
 	
