@@ -14,14 +14,14 @@ public class Main {
 			int action = scanner.nextInt();
 			scanner.nextLine();
 			
-			switch(action) {
+			switch(action) { // switch statement will allow me to choose from the available actions
 			case 0:
 				System.out.println("\nShutting down...");
-				quit = true;
+				quit = true; // By pressing 0 this statement will = true hence it will quit program.
 				break;
 			
 			case 1:
-				clientRecord.printList();
+				clientRecord.printList(); // I am searching for my printList object in the clientRecord class which has the list of all clients.
 				break;
 				
 			case 2:
@@ -55,9 +55,11 @@ public class Main {
 		String name = scanner.nextLine();
 		System.out.println("Enter ID number: ");
 		String idNumber = scanner.nextLine();
-		Contact newContact = Contact.createContact(name, idNumber);
+		System.out.println("Enter their favorite pizza: ");
+		String favPizza = scanner.nextLine();
+		Contact newContact = Contact.createContact(name, idNumber, favPizza);
 		if(clientRecord.addNewClient(newContact)) {
-			System.out.println("New contact added: " +  "\n" + "Name: "+ name + "\n" + "ID: " + idNumber);
+			System.out.println("New contact added: " +  "\n" + "Name: "+ name + "\n" + "ID: " + idNumber + "\n" + "Favorite Pizza: " + favPizza);
 		} else {
 			System.out.println("Cannot add, " + name + " client is already on file");
 		}
@@ -77,7 +79,9 @@ public class Main {
 		String newName = scanner.nextLine();
 		System.out.println("Enter new ID number: ");
 		String newId = scanner.nextLine();
-		Contact newClient  = Contact.createContact(newName, newId);
+		System.out.println("New Favorite Pizza: ");
+		String newFavPizza = scanner.nextLine();
+		Contact newClient  = Contact.createContact(newName, newId, newFavPizza);
 		if (clientRecord.updateClient(existingClientRecord, newClient)) {
 			System.out.println("Successfully update record");
 		} else {
