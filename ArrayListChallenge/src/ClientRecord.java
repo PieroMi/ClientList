@@ -80,9 +80,9 @@ public class ClientRecord {
 		System.out.println("Client List");
 		for(int i=0; i<this.myContacts.size(); i++) { // While i remains less than the contact size it will continue to add to the list.
 			System.out.println((i+1) + "." + 
-										"Name:" + this.myContacts.get(i).getName() + " ID:" +
-										this.myContacts.get(i).getIdNumber() + " Favorite Pizza: " + this.myContacts.get(i).getFavPizza());
-		}
+										"Name:" + this.myContacts.get(i).getName() + 
+										" ID:" + this.myContacts.get(i).getIdNumber() + 
+										" Favorite Pizza: " + this.myContacts.get(i).getFavPizza());}
 	}
 	
 	
